@@ -2,11 +2,19 @@ import unittest
 from functions.get_files_info import get_files_info
 from functions.get_file_content import get_file_content
 from functions.write_file import write_file
+from functions.run_python_file import run_python_file
 
 def test():
-    print(write_file("calculator", "lorem.txt", "wait, this isn't lorem ipsum"))
-    print(write_file("calculator", "pkg/morelorem.txt", "lorem ipsum dolor sit amet"))
-    print(write_file("calculator", "/tmp/temp.txt", "this should not be allowed"))
+  print(run_python_file("calculator", "main.py"))
+  print(run_python_file("calculator", "tests.py"))
+  print(run_python_file("calculator", "../main.py"))
+  print(run_python_file("calculator", "nonexistent.py"))
+
+
+# def test():
+#   print(write_file("calculator", "lorem.txt", "wait, this isn't lorem ipsum"))
+#   print(write_file("calculator", "pkg/morelorem.txt", "lorem ipsum dolor sit amet"))
+#   print(write_file("calculator", "/tmp/temp.txt", "this should not be allowed"))
 
 
 # def test():
@@ -15,22 +23,22 @@ def test():
 #   print(get_file_content("calculator", "/bin/cat"))
 
 # def test():
-#     result = get_files_info("calculator", ".")
-#     print("Result for current directory:")
-#     print(result)
-#     print("")
+#   result = get_files_info("calculator", ".")
+#   print("Result for current directory:")
+#   print(result)
+#   print("")
 
-#     result = get_files_info("calculator", "pkg")
-#     print("Result for 'pkg' directory:")
-#     print(result)
+#   result = get_files_info("calculator", "pkg")
+#   print("Result for 'pkg' directory:")
+#   print(result)
 
-#     result = get_files_info("calculator", "/bin")
-#     print("Result for '/bin' directory:")
-#     print(result)
+#   result = get_files_info("calculator", "/bin")
+#   print("Result for '/bin' directory:")
+#   print(result)
 
-#     result = get_files_info("calculator", "../")
-#     print("Result for '../' directory:")
-#     print(result)
+#   result = get_files_info("calculator", "../")
+#   print("Result for '../' directory:")
+#   print(result)
 
 
 if __name__ == "__main__":
